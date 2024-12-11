@@ -1,0 +1,52 @@
+{
+  "name": "hello-world",
+  "displayName": "Hello World Example",
+  "version": "1.0.0",
+  "author": "dot-mike",
+  "launcherVersion": "13.0.0",
+  "description": "A simple example extension for Flashpoint Launcher.",
+  "main": "./dist/ext.js",
+  "scripts": {
+    "package": "gulp",
+    "build": "webpack --mode development",
+    "watch": "webpack --mode development --watch"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/flashpoint-launcher": "^10.1.9",
+    "@types/node": "^20.17.9",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^3.0.0",
+    "gulp-zip": "^5.1.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "contributes": {
+    "contextButtons": [
+      {
+        "context": "curation",
+        "name": "hello world",
+        "command": "hello-world.curation-button"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Hello World Extensions Configuration",
+        "properties": {
+          "hello-world.name": {
+            "title": "Name",
+            "type": "string",
+            "default": "World",
+            "description": "This name will be shown when the sample button is clicked."
+          }
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "electron": "^33.2.1",
+    "node-fetch": "^3.3.2"
+  }
+}
