@@ -17,7 +17,7 @@ export async function activate(context: flashpoint.ExtensionContext) {
 
         return await flashpoint.dialogs.showMessageBox({
             'title': 'Hello World',
-            'message': `Hei ${name}!`,
+            'message': `Hello ${name}!`,
             'buttons': ['OK']
         });
 
